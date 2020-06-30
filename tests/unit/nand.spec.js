@@ -1,49 +1,63 @@
 import { NandGate } from '../../src/LogicGates.mjs';
 
-const TestCasesResult = [
+const TestCases = [
     {
-        description: '00 = 1',
-        input: [false, false],
-        expectedResult: true,
+        description: '1 proposition',
+        expectedResult: [
+            [[false], true],
+            [[true], false],
+        ],
     },
     {
-        description: '01 = 1',
-        input: [false, true],
-        expectedResult: true,
+        description: '2 propositions',
+        expectedResult: [
+            [[false, false], true],
+            [[false, true], true],
+            [[true, false], true],
+            [[true, true], false],
+        ],
     },
     {
-        description: '10 = 1',
-        input: [true, false],
-        expectedResult: true,
+        description: '3 propositions',
+        expectedResult: [
+            [[false, false, false], true],
+            [[false, false, true], true],
+            [[false, true, false], true],
+            [[false, true, true], true],
+            [[true, false, false], true],
+            [[true, false, true], true],
+            [[true, true, false], true],
+            [[true, true, true], false],
+        ],
     },
     {
-        description: '11 = 0',
-        input: [true, true],
-        expectedResult: false,
-    },
-    {
-        description: '000 = 1',
-        input: [false, false, false],
-        expectedResult: true,
-    },
-    {
-        description: '010 = 1',
-        input: [false, true, false],
-        expectedResult: true,
-    },
-    {
-        description: '1111 = 0',
-        input: [true, true, true, true],
-        expectedResult: false,
+        description: '4 propositions',
+        expectedResult: [
+            [[false, false, false, false], true],
+            [[false, false, false, true], true],
+            [[false, false, true, false], true],
+            [[false, false, true, true], true],
+            [[false, true, false, false], true],
+            [[false, true, false, true], true],
+            [[false, true, true, false], true],
+            [[false, true, true, true], true],
+            [[true, false, false, false], true],
+            [[true, false, false, true], true],
+            [[true, false, true, false], true],
+            [[true, false, true, true], true],
+            [[true, true, false, false], true],
+            [[true, true, false, true], true],
+            [[true, true, true, false], true],
+            [[true, true, true, true], false],
+        ],
     },
 ];
 
-describe.each(TestCasesResult)(
-    'Test nand',
-    ({ description, input, expectedResult }) => {
-        it(description, () => {
-            const table = NandGate.create(input);
-            expect(table.output).toBe(expectedResult);
+describe.each(TestCases)('Test nand', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            const table = NandGate.create(inputTest[0]);
+            expect(table.output).toBe(inputTest[1]);
         });
-    }
-);
+    });
+});
