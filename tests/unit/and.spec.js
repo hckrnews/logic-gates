@@ -4,51 +4,51 @@ const TestCases = [
     {
         description: '1 proposition',
         expectedResult: [
-            [false, [false]],
-            [true, [true]],
+            [[false], false],
+            [[true], true],
         ],
     },
     {
         description: '2 propositions',
         expectedResult: [
-            [false, [false, false]],
-            [false, [false, true]],
-            [false, [true, false]],
-            [true, [true, true]],
+            [[false, false], false],
+            [[false, true], false],
+            [[true, false], false],
+            [[true, true], true],
         ],
     },
     {
         description: '3 propositions',
         expectedResult: [
-            [false, [false, false, false]],
-            [false, [false, false, true]],
-            [false, [false, true, false]],
-            [false, [false, true, true]],
-            [false, [true, false, false]],
-            [false, [true, false, true]],
-            [false, [true, true, false]],
-            [true, [true, true, true]],
+            [[false, false, false], false],
+            [[false, false, true], false],
+            [[false, true, false], false],
+            [[false, true, true], false],
+            [[true, false, false], false],
+            [[true, false, true], false],
+            [[true, true, false], false],
+            [[true, true, true], true],
         ],
     },
     {
         description: '4 propositions',
         expectedResult: [
-            [false, [false, false, false, false]],
-            [false, [false, false, false, true]],
-            [false, [false, false, true, false]],
-            [false, [false, false, true, true]],
-            [false, [false, true, false, false]],
-            [false, [false, true, false, true]],
-            [false, [false, true, true, false]],
-            [false, [false, true, true, true]],
-            [false, [true, false, false, false]],
-            [false, [true, false, false, true]],
-            [false, [true, false, true, false]],
-            [false, [true, false, true, true]],
-            [false, [true, true, false, false]],
-            [false, [true, true, false, true]],
-            [false, [true, true, true, false]],
-            [true, [true, true, true, true]],
+            [[false, false, false, false], false],
+            [[false, false, false, true], false],
+            [[false, false, true, false], false],
+            [[false, false, true, true], false],
+            [[false, true, false, false], false],
+            [[false, true, false, true], false],
+            [[false, true, true, false], false],
+            [[false, true, true, true], false],
+            [[true, false, false, false], false],
+            [[true, false, false, true], false],
+            [[true, false, true, false], false],
+            [[true, false, true, true], false],
+            [[true, true, false, false], false],
+            [[true, true, false, true], false],
+            [[true, true, true, false], false],
+            [[true, true, true, true], true],
         ],
     },
 ];
@@ -56,8 +56,8 @@ const TestCases = [
 describe.each(TestCases)('Test and', ({ description, expectedResult }) => {
     it(description, () => {
         expectedResult.forEach(inputTest => {
-            const table = AndGate.create(inputTest[1]);
-            expect(table.output).toBe(inputTest[0]);
+            const table = AndGate.create(inputTest[0]);
+            expect(table.output).toBe(inputTest[1]);
         });
     });
 });
