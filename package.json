@@ -1,6 +1,6 @@
 {
     "name": "@hckrnews/logic-gates",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Generate logic gates without thinking.",
     "main": "src/LogicGates.mjs",
     "files": [
@@ -14,6 +14,7 @@
         "src/XnorGate.mjs",
         "src/XandGate.mjs",
         "src/xnandGate.mjs",
+        "src/NotGate.mjs",
         "src/Helper.js",
         "src/InvalidInputError.js"
     ],

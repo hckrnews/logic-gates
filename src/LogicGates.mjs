@@ -7,6 +7,7 @@ import XorGate from './XorGate.mjs';
 import XnorGate from './XnorGate.mjs';
 import XandGate from './XandGate.mjs';
 import XnandGate from './XnandGate.mjs';
+import NotGate from './NotGate.mjs';
 
 export default Gate;
 export {
@@ -18,4 +19,5 @@ export {
     XnorGate,
     XandGate,
     XnandGate,
+    NotGate,
 };

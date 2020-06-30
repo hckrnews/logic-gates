@@ -37,14 +37,15 @@ true
 ```
 
 All options:
-* AndGate
-* NandGate
-* OrGate
-* NorGate
-* XorGate
-* XnorGate
-* XandGate
-* XnandGate
+- [AndGate](https://en.wikipedia.org/wiki/AND_gate)
+- [NandGate](https://en.wikipedia.org/wiki/NAND_gate)
+- [OrGate](https://en.wikipedia.org/wiki/OR_gate)
+- [NorGate](https://en.wikipedia.org/wiki/NOR_gate)
+- [XorGate](https://en.wikipedia.org/wiki/XOR_gate)
+- [XnorGate](https://en.wikipedia.org/wiki/XNOR_gate)
+- [XandGate](https://en.wiktionary.org/wiki/XAND)
+- [XnandGate](https://en.wiktionary.org/wiki/XNAND)
+- [NotGate](https://en.wikipedia.org/wiki/NOT_gate)
 
 ## And gate
 
@@ -149,6 +150,19 @@ All options:
 | 1       | 0       | 1       | 1      |
 | 1       | 1       | 0       | 1      |
 | 1       | 1       | 1       | 0      |
+
+## Not gate
+
+| Input 1 | Input 2 | Input 3 | Output  |
+| ------- | ------- | ------- | ------- |
+| 0       | 0       | 0       | [1,1,1] |
+| 0       | 0       | 1       | [1,1,0] |
+| 0       | 1       | 0       | [1,0,1] |
+| 0       | 1       | 1       | [1,0,0] |
+| 1       | 0       | 0       | [0,1,1] |
+| 1       | 0       | 1       | [0,1,0] |
+| 1       | 1       | 0       | [0,0,1] |
+| 1       | 1       | 1       | [0,0,0] |
 
 [npm-url]: https://www.npmjs.com/package/@hckrnews/logic-gates
 [npm-image]: https://img.shields.io/npm/v/@hckrnews/logic-gates.svg
