@@ -1,8 +1,8 @@
 # Logic gates package
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url]
+Generate logic gates without thinking.
 
-...
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url]
 
 ## Installation
 
@@ -45,6 +45,110 @@ All options:
 * XnorGate
 * XandGate
 * XnandGate
+
+## And gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 0      |
+| 0       | 0       | 1       | 0      |
+| 0       | 1       | 0       | 0      |
+| 0       | 1       | 1       | 0      |
+| 1       | 0       | 0       | 0      |
+| 1       | 0       | 1       | 0      |
+| 1       | 1       | 0       | 0      |
+| 1       | 1       | 1       | 1      |
+
+## Nand gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 1      |
+| 0       | 0       | 1       | 1      |
+| 0       | 1       | 0       | 1      |
+| 0       | 1       | 1       | 1      |
+| 1       | 0       | 0       | 1      |
+| 1       | 0       | 1       | 1      |
+| 1       | 1       | 0       | 1      |
+| 1       | 1       | 1       | 0      |
+
+## Or gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 0      |
+| 0       | 0       | 1       | 1      |
+| 0       | 1       | 0       | 1      |
+| 0       | 1       | 1       | 1      |
+| 1       | 0       | 0       | 1      |
+| 1       | 0       | 1       | 1      |
+| 1       | 1       | 0       | 1      |
+| 1       | 1       | 1       | 1      |
+
+## Nor gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 1      |
+| 0       | 0       | 1       | 0      |
+| 0       | 1       | 0       | 0      |
+| 0       | 1       | 1       | 0      |
+| 1       | 0       | 0       | 0      |
+| 1       | 0       | 1       | 0      |
+| 1       | 1       | 0       | 0      |
+| 1       | 1       | 1       | 0      |
+
+## Xor gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 0      |
+| 0       | 0       | 1       | 1      |
+| 0       | 1       | 0       | 1      |
+| 0       | 1       | 1       | 0      |
+| 1       | 0       | 0       | 1      |
+| 1       | 0       | 1       | 0      |
+| 1       | 1       | 0       | 0      |
+| 1       | 1       | 1       | 1      |
+
+## Xnor gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 1      |
+| 0       | 0       | 1       | 0      |
+| 0       | 1       | 0       | 0      |
+| 0       | 1       | 1       | 1      |
+| 1       | 0       | 0       | 0      |
+| 1       | 0       | 1       | 1      |
+| 1       | 1       | 0       | 1      |
+| 1       | 1       | 1       | 0      |
+
+## Xand gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 1      |
+| 0       | 0       | 1       | 0      |
+| 0       | 1       | 0       | 0      |
+| 0       | 1       | 1       | 0      |
+| 1       | 0       | 0       | 0      |
+| 1       | 0       | 1       | 0      |
+| 1       | 1       | 0       | 0      |
+| 1       | 1       | 1       | 1      |
+
+## Xnand gate
+
+| Input 1 | Input 2 | Input 3 | Output |
+| ------- | ------- | ------- | ------ |
+| 0       | 0       | 0       | 0      |
+| 0       | 0       | 1       | 1      |
+| 0       | 1       | 0       | 1      |
+| 0       | 1       | 1       | 1      |
+| 1       | 0       | 0       | 1      |
+| 1       | 0       | 1       | 1      |
+| 1       | 1       | 0       | 1      |
+| 1       | 1       | 1       | 0      |
 
 [npm-url]: https://www.npmjs.com/package/@hckrnews/logic-gates
 [npm-image]: https://img.shields.io/npm/v/@hckrnews/logic-gates.svg
