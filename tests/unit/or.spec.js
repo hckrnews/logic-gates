@@ -1,49 +1,71 @@
-import { OrGate } from '../../src/LogicGates.mjs';
+import { OrGate, or } from '../../src/LogicGates.mjs';
 
-const TestCasesResult = [
+const TestCases = [
     {
-        description: '00 = 0',
-        input: [false, false],
-        expectedResult: false,
+        description: '1 proposition',
+        expectedResult: [
+            [[false], false],
+            [[true], true],
+        ],
     },
     {
-        description: '01 = 1',
-        input: [false, true],
-        expectedResult: true,
+        description: '2 propositions',
+        expectedResult: [
+            [[false, false], false],
+            [[false, true], true],
+            [[true, false], true],
+            [[true, true], true],
+        ],
     },
     {
-        description: '10 = 1',
-        input: [true, false],
-        expectedResult: true,
+        description: '3 propositions',
+        expectedResult: [
+            [[false, false, false], false],
+            [[false, false, true], true],
+            [[false, true, false], true],
+            [[false, true, true], true],
+            [[true, false, false], true],
+            [[true, false, true], true],
+            [[true, true, false], true],
+            [[true, true, true], true],
+        ],
     },
     {
-        description: '11 = 1',
-        input: [true, true],
-        expectedResult: true,
-    },
-    {
-        description: '000 = 0',
-        input: [false, false, false],
-        expectedResult: false,
-    },
-    {
-        description: '010 = 1',
-        input: [false, true, false],
-        expectedResult: true,
-    },
-    {
-        description: '1111 = 1',
-        input: [true, true, true, true],
-        expectedResult: true,
+        description: '4 propositions',
+        expectedResult: [
+            [[false, false, false, false], false],
+            [[false, false, false, true], true],
+            [[false, false, true, false], true],
+            [[false, false, true, true], true],
+            [[false, true, false, false], true],
+            [[false, true, false, true], true],
+            [[false, true, true, false], true],
+            [[false, true, true, true], true],
+            [[true, false, false, false], true],
+            [[true, false, false, true], true],
+            [[true, false, true, false], true],
+            [[true, false, true, true], true],
+            [[true, true, false, false], true],
+            [[true, true, false, true], true],
+            [[true, true, true, false], true],
+            [[true, true, true, true], true],
+        ],
     },
 ];
 
-describe.each(TestCasesResult)(
-    'Test or',
-    ({ description, input, expectedResult }) => {
-        it(description, () => {
-            const table = OrGate.create(input);
-            expect(table.output).toBe(expectedResult);
+describe.each(TestCases)('Test OrGate', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            const table = OrGate.create(inputTest[0]);
+            expect(table.output).toBe(inputTest[1]);
         });
-    }
-);
+    });
+});
+
+describe.each(TestCases)('Test or', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            expect(or(inputTest[0])).toBe(inputTest[1]);
+        });
+    });
+});

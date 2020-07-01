@@ -1,49 +1,74 @@
-import { XnandGate } from '../../src/LogicGates.mjs';
+import { XnandGate, xnand } from '../../src/LogicGates.mjs';
 
-const TestCasesResult = [
+const TestCases = [
     {
-        description: '00 = 0',
-        input: [false, false],
-        expectedResult: false,
+        description: '1 proposition',
+        expectedResult: [
+            [[false], false],
+            [[true], false],
+        ],
     },
     {
-        description: '01 = 1',
-        input: [false, true],
-        expectedResult: true,
+        description: '2 propositions',
+        expectedResult: [
+            [[false, false], false],
+            [[false, true], true],
+            [[true, false], true],
+            [[true, true], false],
+        ],
     },
     {
-        description: '10 = 1',
-        input: [true, false],
-        expectedResult: true,
+        description: '3 propositions',
+        expectedResult: [
+            [[false, false, false], false],
+            [[false, false, true], true],
+            [[false, true, false], true],
+            [[false, true, true], true],
+            [[true, false, false], true],
+            [[true, false, true], true],
+            [[true, true, false], true],
+            [[true, true, true], false],
+        ],
     },
     {
-        description: '11 = 0',
-        input: [true, true],
-        expectedResult: false,
-    },
-    {
-        description: '000 = 0',
-        input: [false, false, false],
-        expectedResult: false,
-    },
-    {
-        description: '010 = 1',
-        input: [false, true, false],
-        expectedResult: true,
-    },
-    {
-        description: '1111 = 0',
-        input: [true, true, true, true],
-        expectedResult: false,
+        description: '4 propositions',
+        expectedResult: [
+            [[false, false, false, false], false],
+            [[false, false, false, true], true],
+            [[false, false, true, false], true],
+            [[false, false, true, true], true],
+            [[false, true, false, false], true],
+            [[false, true, false, true], true],
+            [[false, true, true, false], true],
+            [[false, true, true, true], true],
+            [[true, false, false, false], true],
+            [[true, false, false, true], true],
+            [[true, false, true, false], true],
+            [[true, false, true, true], true],
+            [[true, true, false, false], true],
+            [[true, true, false, true], true],
+            [[true, true, true, false], true],
+            [[true, true, true, true], false],
+        ],
     },
 ];
 
-describe.each(TestCasesResult)(
-    'Test xnand',
-    ({ description, input, expectedResult }) => {
+describe.each(TestCases)(
+    'Test XnandGate',
+    ({ description, expectedResult }) => {
         it(description, () => {
-            const table = XnandGate.create(input);
-            expect(table.output).toBe(expectedResult);
+            expectedResult.forEach(inputTest => {
+                const table = XnandGate.create(inputTest[0]);
+                expect(table.output).toBe(inputTest[1]);
+            });
         });
     }
 );
+
+describe.each(TestCases)('Test xnand', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            expect(xnand(inputTest[0])).toBe(inputTest[1]);
+        });
+    });
+});

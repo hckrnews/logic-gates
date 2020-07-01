@@ -7,4 +7,7 @@ class XandGate extends Gate {
     }
 }
 
+const xand = input => XandGate.create(input).output;
+
 export default XandGate;
+export { XandGate, xand };

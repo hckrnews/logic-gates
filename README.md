@@ -1,6 +1,8 @@
 # Logic gates package
 
 Generate logic gates without thinking.
+You can use this package if you need well tested logic gate checks.
+e.g. if all options must be true or false, but don't must be a mix of true and false, you can use the xand gate.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url]
 
@@ -36,15 +38,39 @@ Output a boolean:
 true
 ```
 
+Or use the short syntax:
+```
+import { and } from "@hckrnews/logic-gates";
+
+and([true, true])
+```
+
+Output a boolean:
+```
+true
+```
+
 All options:
-* AndGate
-* NandGate
-* OrGate
-* NorGate
-* XorGate
-* XnorGate
-* XandGate
-* XnandGate
+- [AndGate](https://en.wikipedia.org/wiki/AND_gate)
+- [NandGate](https://en.wikipedia.org/wiki/NAND_gate)
+- [OrGate](https://en.wikipedia.org/wiki/OR_gate)
+- [NorGate](https://en.wikipedia.org/wiki/NOR_gate)
+- [XorGate](https://en.wikipedia.org/wiki/XOR_gate)
+- [XnorGate](https://en.wikipedia.org/wiki/XNOR_gate)
+- [XandGate](https://en.wiktionary.org/wiki/XAND)
+- [XnandGate](https://en.wiktionary.org/wiki/XNAND)
+- [NotGate](https://en.wikipedia.org/wiki/NOT_gate)
+
+Short syntax:
+- [and](https://en.wikipedia.org/wiki/AND_gate)
+- [nand](https://en.wikipedia.org/wiki/NAND_gate)
+- [or](https://en.wikipedia.org/wiki/OR_gate)
+- [nor](https://en.wikipedia.org/wiki/NOR_gate)
+- [xor](https://en.wikipedia.org/wiki/XOR_gate)
+- [xnor](https://en.wikipedia.org/wiki/XNOR_gate)
+- [xand](https://en.wiktionary.org/wiki/XAND)
+- [xnand](https://en.wiktionary.org/wiki/XNAND)
+- [not](https://en.wikipedia.org/wiki/NOT_gate)
 
 ## And gate
 
@@ -149,6 +175,19 @@ All options:
 | 1       | 0       | 1       | 1      |
 | 1       | 1       | 0       | 1      |
 | 1       | 1       | 1       | 0      |
+
+## Not gate
+
+| Input 1 | Input 2 | Input 3 | Output  |
+| ------- | ------- | ------- | ------- |
+| 0       | 0       | 0       | [1,1,1] |
+| 0       | 0       | 1       | [1,1,0] |
+| 0       | 1       | 0       | [1,0,1] |
+| 0       | 1       | 1       | [1,0,0] |
+| 1       | 0       | 0       | [0,1,1] |
+| 1       | 0       | 1       | [0,1,0] |
+| 1       | 1       | 0       | [0,0,1] |
+| 1       | 1       | 1       | [0,0,0] |
 
 [npm-url]: https://www.npmjs.com/package/@hckrnews/logic-gates
 [npm-image]: https://img.shields.io/npm/v/@hckrnews/logic-gates.svg

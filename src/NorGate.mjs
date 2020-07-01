@@ -6,4 +6,7 @@ class NorGate extends Gate {
     }
 }
 
+const nor = input => NorGate.create(input).output;
+
 export default NorGate;
+export { NorGate, nor };

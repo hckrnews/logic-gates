@@ -1,49 +1,71 @@
-import { NorGate } from '../../src/LogicGates.mjs';
+import { NorGate, nor } from '../../src/LogicGates.mjs';
 
-const TestCasesResult = [
+const TestCases = [
     {
-        description: '00 = 1',
-        input: [false, false],
-        expectedResult: true,
+        description: '1 proposition',
+        expectedResult: [
+            [[false], true],
+            [[true], false],
+        ],
     },
     {
-        description: '01 = 0',
-        input: [false, true],
-        expectedResult: false,
+        description: '2 propositions',
+        expectedResult: [
+            [[false, false], true],
+            [[false, true], false],
+            [[true, false], false],
+            [[true, true], false],
+        ],
     },
     {
-        description: '10 = 0',
-        input: [true, false],
-        expectedResult: false,
+        description: '3 propositions',
+        expectedResult: [
+            [[false, false, false], true],
+            [[false, false, true], false],
+            [[false, true, false], false],
+            [[false, true, true], false],
+            [[true, false, false], false],
+            [[true, false, true], false],
+            [[true, true, false], false],
+            [[true, true, true], false],
+        ],
     },
     {
-        description: '11 = 0',
-        input: [true, true],
-        expectedResult: false,
-    },
-    {
-        description: '000 = 1',
-        input: [false, false, false],
-        expectedResult: true,
-    },
-    {
-        description: '010 = 0',
-        input: [false, true, false],
-        expectedResult: false,
-    },
-    {
-        description: '1111 = 0',
-        input: [true, true, true, true],
-        expectedResult: false,
+        description: '4 propositions',
+        expectedResult: [
+            [[false, false, false, false], true],
+            [[false, false, false, true], false],
+            [[false, false, true, false], false],
+            [[false, false, true, true], false],
+            [[false, true, false, false], false],
+            [[false, true, false, true], false],
+            [[false, true, true, false], false],
+            [[false, true, true, true], false],
+            [[true, false, false, false], false],
+            [[true, false, false, true], false],
+            [[true, false, true, false], false],
+            [[true, false, true, true], false],
+            [[true, true, false, false], false],
+            [[true, true, false, true], false],
+            [[true, true, true, false], false],
+            [[true, true, true, true], false],
+        ],
     },
 ];
 
-describe.each(TestCasesResult)(
-    'Test nor',
-    ({ description, input, expectedResult }) => {
-        it(description, () => {
-            const table = NorGate.create(input);
-            expect(table.output).toBe(expectedResult);
+describe.each(TestCases)('Test NorGate', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            const table = NorGate.create(inputTest[0]);
+            expect(table.output).toBe(inputTest[1]);
         });
-    }
-);
+    });
+});
+
+describe.each(TestCases)('Test nor', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            expect(nor(inputTest[0])).toBe(inputTest[1]);
+        });
+    });
+});
