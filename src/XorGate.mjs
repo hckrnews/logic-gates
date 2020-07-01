@@ -7,4 +7,7 @@ class XorGate extends Gate {
     }
 }
 
+const xor = input => XorGate.create(input).output;
+
 export default XorGate;
+export { XorGate, xor };
