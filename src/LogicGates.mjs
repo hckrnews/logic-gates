@@ -1,7 +1,7 @@
 import Gate from './Gate.mjs';
 import { AndGate, and } from './AndGate.mjs';
 import { NandGate, nand } from './NandGate.mjs';
-import OrGate from './OrGate.mjs';
+import { OrGate, or } from './OrGate.mjs';
 import NorGate from './NorGate.mjs';
 import XorGate from './XorGate.mjs';
 import XnorGate from './XnorGate.mjs';
@@ -16,6 +16,7 @@ export {
     NandGate,
     nand,
     OrGate,
+    or,
     NorGate,
     XorGate,
     XnorGate,
