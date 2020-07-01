@@ -36,6 +36,18 @@ Output a boolean:
 true
 ```
 
+Or the simple way:
+```
+import { and } from "@hckrnews/logic-gates";
+
+and([true, true])
+```
+
+Output a boolean:
+```
+true
+```
+
 All options:
 - [AndGate](https://en.wikipedia.org/wiki/AND_gate)
 - [NandGate](https://en.wikipedia.org/wiki/NAND_gate)
