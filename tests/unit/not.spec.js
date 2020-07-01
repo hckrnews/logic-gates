@@ -91,7 +91,7 @@ const TestCases = [
             ],
             [
                 [false, true, false, true],
-                [tue, false, true, false],
+                [true, false, true, false],
             ],
             [
                 [false, true, true, false],
