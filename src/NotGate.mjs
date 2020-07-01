@@ -6,4 +6,7 @@ class NotGate extends Gate {
     }
 }
 
+const not = input => NotGate.create(input).output;
+
 export default NotGate;
+export { NotGate, not };

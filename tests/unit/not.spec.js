@@ -1,49 +1,155 @@
-import { NotGate } from '../../src/LogicGates.mjs';
+import { NotGate, not } from '../../src/LogicGates.mjs';
 
-const TestCasesResult = [
+const TestCases = [
     {
-        description: '00 = 11',
-        input: [false, false],
-        expectedResult: [true, true],
+        description: '1 proposition',
+        expectedResult: [
+            [[false], [true]],
+            [[true], [false]],
+        ],
     },
     {
-        description: '01 = 10',
-        input: [false, true],
-        expectedResult: [true, false],
+        description: '2 propositions',
+        expectedResult: [
+            [
+                [false, false],
+                [true, true],
+            ],
+            [
+                [false, true],
+                [true, false],
+            ],
+            [
+                [true, false],
+                [false, true],
+            ],
+            [
+                [true, true],
+                [false, false],
+            ],
+        ],
     },
     {
-        description: '10 = 01',
-        input: [true, false],
-        expectedResult: [false, true],
+        description: '3 propositions',
+        expectedResult: [
+            [
+                [false, false, false],
+                [true, true, true],
+            ],
+            [
+                [false, false, true],
+                [true, true, false],
+            ],
+            [
+                [false, true, false],
+                [true, false, true],
+            ],
+            [
+                [false, true, true],
+                [true, false, false],
+            ],
+            [
+                [true, false, false],
+                [false, true, true],
+            ],
+            [
+                [true, false, true],
+                [false, true, false],
+            ],
+            [
+                [true, true, false],
+                [false, false, true],
+            ],
+            [
+                [true, true, true],
+                [false, false, false],
+            ],
+        ],
     },
     {
-        description: '11 = 00',
-        input: [true, true],
-        expectedResult: [false, false],
-    },
-    {
-        description: '000 = 111',
-        input: [false, false, false],
-        expectedResult: [true, true, true],
-    },
-    {
-        description: '010 = 101',
-        input: [false, true, false],
-        expectedResult: [true, false, true],
-    },
-    {
-        description: '1111 = 0000',
-        input: [true, true, true, true],
-        expectedResult: [false, false, false, false],
+        description: '4 propositions',
+        expectedResult: [
+            [
+                [false, false, false, false],
+                [true, true, true, true],
+            ],
+            [
+                [false, false, false, true],
+                [true, true, true, false],
+            ],
+            [
+                [false, false, true, false],
+                [true, true, false, true],
+            ],
+            [
+                [false, false, true, true],
+                [true, true, false, false],
+            ],
+            [
+                [false, true, false, false],
+                [true, false, true, true],
+            ],
+            [
+                [false, true, false, true],
+                [tue, false, true, false],
+            ],
+            [
+                [false, true, true, false],
+                [true, false, false, true],
+            ],
+            [
+                [false, true, true, true],
+                [true, false, false, false],
+            ],
+            [
+                [true, false, false, false],
+                [false, true, true, true],
+            ],
+            [
+                [true, false, false, true],
+                [false, true, true, false],
+            ],
+            [
+                [true, false, true, false],
+                [false, true, false, true],
+            ],
+            [
+                [true, false, true, true],
+                [false, true, false, false],
+            ],
+            [
+                [true, true, false, false],
+                [false, false, true, true],
+            ],
+            [
+                [true, true, false, true],
+                [false, false, true, false],
+            ],
+            [
+                [true, true, true, false],
+                [false, false, false, true],
+            ],
+            [
+                [true, true, true, true],
+                [false, false, false, false],
+            ],
+        ],
     },
 ];
 
-describe.each(TestCasesResult)(
-    'Test not',
-    ({ description, input, expectedResult }) => {
-        it(description, () => {
-            const table = NotGate.create(input);
-            expect(table.output).toMatchObject(expectedResult);
+describe.each(TestCases)('Test NotGate', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            const table = NotGate.create(inputTest[0]);
+            expect(table.output).toMatchObject(inputTest[1]);
         });
-    }
-);
+    });
+});
+
+describe.each(TestCases)('Test not', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            expect(not(inputTest[0])).toMatchObject(inputTest[1]);
+        });
+    });
+});
