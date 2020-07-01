@@ -5,7 +5,7 @@ import { OrGate, or } from './OrGate.mjs';
 import { NorGate, nor } from './NorGate.mjs';
 import { XorGate, xor } from './XorGate.mjs';
 import { XnorGate, xnor } from './XnorGate.mjs';
-import XandGate from './XandGate.mjs';
+import { XandGate, xand } from './XandGate.mjs';
 import XnandGate from './XnandGate.mjs';
 import NotGate from './NotGate.mjs';
 
@@ -24,6 +24,7 @@ export {
     XnorGate,
     xnor,
     XandGate,
+    xand,
     XnandGate,
     NotGate,
 };
