@@ -1,4 +1,4 @@
-import { NandGate } from '../../src/LogicGates.mjs';
+import { NandGate, nand } from '../../src/LogicGates.mjs';
 
 const TestCases = [
     {
@@ -53,11 +53,19 @@ const TestCases = [
     },
 ];
 
-describe.each(TestCases)('Test nand', ({ description, expectedResult }) => {
+describe.each(TestCases)('Test NandGate', ({ description, expectedResult }) => {
     it(description, () => {
         expectedResult.forEach(inputTest => {
             const table = NandGate.create(inputTest[0]);
             expect(table.output).toBe(inputTest[1]);
+        });
+    });
+});
+
+describe.each(TestCases)('Test nand', ({ description, expectedResult }) => {
+    it(description, () => {
+        expectedResult.forEach(inputTest => {
+            expect(nand(inputTest[0])).toBe(inputTest[1]);
         });
     });
 });
