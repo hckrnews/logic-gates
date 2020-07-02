@@ -6,7 +6,7 @@ class AndGate extends Gate {
     }
 }
 
-const and = input => AndGate.create(input).output;
+const and = (input) => AndGate.create(input).output;
 
 export default AndGate;
 export { AndGate, and };

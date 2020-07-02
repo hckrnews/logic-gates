@@ -6,7 +6,7 @@ class OrGate extends Gate {
     }
 }
 
-const or = input => OrGate.create(input).output;
+const or = (input) => OrGate.create(input).output;
 
 export default OrGate;
 export { OrGate, or };

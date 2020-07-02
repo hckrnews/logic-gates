@@ -7,7 +7,7 @@ class XnorGate extends Gate {
     }
 }
 
-const xnor = input => XnorGate.create(input).output;
+const xnor = (input) => XnorGate.create(input).output;
 
 export default XnorGate;
 export { XnorGate, xnor };

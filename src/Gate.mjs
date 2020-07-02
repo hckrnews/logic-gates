@@ -4,7 +4,7 @@ class Gate {
     constructor(inputs) {
         if (
             !Array.isArray(inputs) ||
-            !inputs.every(item => typeof item === 'boolean')
+            !inputs.every((item) => typeof item === 'boolean')
         ) {
             throw new InvalidInputError(
                 inputs,

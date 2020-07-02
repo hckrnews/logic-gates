@@ -55,7 +55,7 @@ const TestCases = [
 
 describe.each(TestCases)('Test XnorGate', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             const table = XnorGate.create(inputTest[0]);
             expect(table.output).toBe(inputTest[1]);
         });
@@ -64,7 +64,7 @@ describe.each(TestCases)('Test XnorGate', ({ description, expectedResult }) => {
 
 describe.each(TestCases)('Test xnor', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             expect(xnor(inputTest[0])).toBe(inputTest[1]);
         });
     });

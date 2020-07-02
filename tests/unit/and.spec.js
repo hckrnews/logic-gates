@@ -55,7 +55,7 @@ const TestCases = [
 
 describe.each(TestCases)('Test AndGate', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             const table = AndGate.create(inputTest[0]);
             expect(table.output).toBe(inputTest[1]);
         });
@@ -64,7 +64,7 @@ describe.each(TestCases)('Test AndGate', ({ description, expectedResult }) => {
 
 describe.each(TestCases)('Test and', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             expect(and(inputTest[0])).toBe(inputTest[1]);
         });
     });
