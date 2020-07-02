@@ -6,7 +6,7 @@ class NandGate extends Gate {
     }
 }
 
-const nand = input => NandGate.create(input).output;
+const nand = (input) => NandGate.create(input).output;
 
 export default NandGate;
 export { NandGate, nand };

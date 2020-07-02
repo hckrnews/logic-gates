@@ -139,7 +139,7 @@ const TestCases = [
 
 describe.each(TestCases)('Test NotGate', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             const table = NotGate.create(inputTest[0]);
             expect(table.output).toMatchObject(inputTest[1]);
         });
@@ -148,7 +148,7 @@ describe.each(TestCases)('Test NotGate', ({ description, expectedResult }) => {
 
 describe.each(TestCases)('Test not', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             expect(not(inputTest[0])).toMatchObject(inputTest[1]);
         });
     });

@@ -55,7 +55,7 @@ const TestCases = [
 
 describe.each(TestCases)('Test OrGate', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             const table = OrGate.create(inputTest[0]);
             expect(table.output).toBe(inputTest[1]);
         });
@@ -64,7 +64,7 @@ describe.each(TestCases)('Test OrGate', ({ description, expectedResult }) => {
 
 describe.each(TestCases)('Test or', ({ description, expectedResult }) => {
     it(description, () => {
-        expectedResult.forEach(inputTest => {
+        expectedResult.forEach((inputTest) => {
             expect(or(inputTest[0])).toBe(inputTest[1]);
         });
     });
