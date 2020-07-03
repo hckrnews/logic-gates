@@ -4,7 +4,7 @@ Generate logic gates without thinking.
 You can use this package if you need well tested logic gate checks.
 e.g. if all options must be true or false, but don't must be a mix of true and false, you can use the xand gate.
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Scrutinizer Code Quality][scrutinizer-image]][scrutinizer-url]
 
 ## Installation
 
@@ -195,3 +195,5 @@ Short syntax:
 [travis-image]: https://img.shields.io/travis/hckrnews/logic-gates/master.svg
 [coveralls-url]: https://coveralls.io/r/hckrnews/logic-gates
 [coveralls-image]: https://img.shields.io/coveralls/hckrnews/logic-gates/master.svg
+[scrutinizer-url]: https://scrutinizer-ci.com/g/hckrnews/logic-gates/?branch=master
+[scrutinizer-image]: https://scrutinizer-ci.com/g/hckrnews/logic-gates/badges/quality-score.png?b=master
