@@ -53,7 +53,7 @@
         "url": "https://github.com/hckrnews/logic-gates"
     },
     "engines": {
-        "node": ">=14"
+        "node": ">=12"
     },
     "keywords": [
         "logic",
