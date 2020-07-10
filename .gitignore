@@ -7,6 +7,7 @@ report
 # local env files
 .env.local
 .env.*.local
+shiftleft.json
 
 # Log files
 npm-debug.log*
