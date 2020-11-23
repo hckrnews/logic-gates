@@ -61,6 +61,6 @@
         "logic gates"
     ],
     "dependencies": {
-        "array-helpers": "^3.5.0"
+        "array-helpers": "^4.0.1"
     }
 }
