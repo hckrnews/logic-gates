@@ -17,8 +17,6 @@ module.exports = {
         '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx|mjs|cjs)',
     ],
 
-    testURL: 'http://localhost/',
-
     collectCoverage: true,
     collectCoverageFrom: ['src/*.js', 'src/*.mjs', 'src/*.cjs'],
 };
